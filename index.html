@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nellie&#x27;s Big Dreams | A Cartoon for Dogs and Their People</title>
+<meta name="description" content="Short 3D cartoons about Nellie, a puppy with big dreams. For dogs and the people who love them, with Dog View: a simulation of a dog&#x27;s eye, color only.">
+<link rel="canonical" href="https://nelliesbigdreams.com/">
+<link rel="icon" href="img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="img/logo-nellie-circle.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nellie&#x27;s Big Dreams | A Cartoon for Dogs and Their People">
+<meta property="og:description" content="Short 3D cartoons about Nellie, a puppy with big dreams. For dogs and the people who love them, with Dog View: a simulation of a dog&#x27;s eye, color only.">
+<meta property="og:url" content="https://nelliesbigdreams.com/">
+<meta property="og:image" content="https://nelliesbigdreams.com/img/og-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFEFD8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: a storybook page on the show's cream; the films as a shelf of cards; one deep blue band (the films' own title band) for Dog View. */
+:root{
+  --cream:#FFEFD8; --paper:#FFFAF0; --ink:#10275F; --blue:#2F5BEA; --yellow:#F5C518; --muted:#4E5878; --line:#E9DCC0; --panel:#FFF7E8;
+  --display:"Gelasio", Georgia, "Times New Roman", serif;
+  --body:"Nunito", "Arial Rounded MT Bold", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4.2vw,2.8rem);line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h3{font-family:var(--display);font-weight:700;font-size:1.35rem;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+.lede{font-size:1.15rem;color:var(--muted);max-width:62ch}
+.eyebrow{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+section{padding-block:clamp(56px,8vw,96px)}
+.head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,44px);max-width:720px}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--cream) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:700;font-size:1.1rem;min-width:0}
+.brand img{width:40px;height:40px;border-radius:50%}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{text-decoration:none;color:var(--ink);font-weight:700;font-size:.95rem;padding:6px 10px;border-radius:999px}
+.nav a:hover{background:var(--paper)}
+@media (max-width:640px){.nav a:not(.go){display:none}.brand span{font-size:1rem}}
+
+/* hero: the channel art itself */
+.hero{padding-block:clamp(8px,2vw,24px) clamp(40px,6vw,72px)}
+.hero figure{margin:0 auto;max-width:940px}
+.hero img{width:100%;height:auto;aspect-ratio:2752/1536}
+.hero .under{display:grid;justify-items:center;text-align:center;gap:18px;margin-top:clamp(12px,2vw,20px)}
+.tagline{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.3;max-width:30ch;text-wrap:balance}
+.sub{color:var(--muted);max-width:58ch}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:800;padding:14px 26px;border-radius:999px;font-size:1.05rem;transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px);background:var(--blue)}
+.btn .tri{width:0;height:0;border-left:11px solid var(--yellow);border-top:7px solid transparent;border-bottom:7px solid transparent}
+
+/* films */
+.films,.paper{background:var(--paper);border-block:1px solid var(--line)}
+.shelf{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+.film{grid-column:span 2;display:grid;gap:12px;align-content:start;min-width:0}
+.film:nth-child(4){grid-column:2 / span 2}
+@media (max-width:900px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}.film,.film:nth-child(4){grid-column:span 1}.film:last-child{grid-column:1 / -1;max-width:calc(50% - 12px);justify-self:center}}
+@media (max-width:560px){.shelf{grid-template-columns:1fr}.film:last-child{max-width:none}}
+.player{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--ink);text-decoration:none}
+.player img{width:100%;height:100%!important;object-fit:cover;transition:transform .35s ease}
+.player:hover img{transform:scale(1.03)}
+.player .play{position:absolute;left:14px;bottom:14px;width:52px;height:52px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;box-shadow:0 4px 14px rgba(16,39,95,.25)}
+.player .play::after{content:"";margin-left:4px;border-left:16px solid var(--ink);border-top:10px solid transparent;border-bottom:10px solid transparent}
+.player .len{position:absolute;right:12px;bottom:12px;background:rgba(16,39,95,.82);color:var(--paper);font-weight:800;font-size:.8rem;padding:3px 9px;border-radius:999px;font-variant-numeric:tabular-nums}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film .no{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.film p{color:var(--muted);font-size:1rem}
+.films .more{margin-top:clamp(28px,4vw,40px);display:flex;justify-content:center}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* the arcade: each game in a little cabinet screen */
+.arcade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+@media (max-width:900px){.arcade{grid-template-columns:repeat(2,minmax(0,1fr))}.game:last-child{grid-column:1 / -1;max-width:calc(50% - 12px);justify-self:center}}
+@media (max-width:560px){.arcade{grid-template-columns:1fr}.game:last-child{max-width:none}}
+.game{display:grid;gap:12px;align-content:start;min-width:0}
+.cab{position:relative;display:block;padding:10px;border-radius:18px;background:#0A0E22;box-shadow:0 0 0 3px var(--yellow), 0 10px 24px rgba(16,39,95,.18);text-decoration:none}
+.cab img{width:100%;height:auto!important;aspect-ratio:4/3;object-fit:cover;border-radius:10px;transition:transform .35s ease}
+.cab:hover img{transform:scale(1.02)}
+.cab .modes{position:absolute;left:20px;top:20px;background:rgba(16,39,95,.9);color:var(--paper);font-weight:800;font-size:.78rem;letter-spacing:.04em;padding:4px 11px;border-radius:999px}
+.game .no{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.game p{color:var(--muted);font-size:1rem}
+.game .btn{justify-self:start;padding:11px 22px;font-size:1rem}
+.arcade-note{margin-top:clamp(24px,3vw,36px);text-align:center;color:var(--muted);max-width:62ch;margin-inline:auto}
+
+/* dog view band */
+.band{background:var(--ink);color:var(--paper)}
+.band .eyebrow{color:var(--yellow)}
+.band .lede{color:#C9D3F2}
+.dv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:820px){.dv{grid-template-columns:1fr}}
+.dv .text{display:grid;gap:18px;min-width:0}
+.dv figure{margin:0;border-radius:16px;overflow:hidden}
+.bow{display:inline-block;width:46px;height:20px;position:relative}
+.bow::before,.bow::after{content:"";position:absolute;top:0;width:22px;height:20px;background:var(--yellow);border-radius:50% 20% 20% 50%}
+.bow::before{left:0}.bow::after{right:0;transform:scaleX(-1)}
+.badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,250,240,.1);border:1px solid rgba(255,250,240,.25);padding:6px 14px;border-radius:12px;font-weight:800;width:fit-content}
+.bone{width:30px;height:12px;position:relative;flex:none}
+.bone::before{content:"";position:absolute;left:5px;right:5px;top:3px;height:6px;background:var(--yellow);border-radius:3px}
+.bone i{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--yellow)}
+.bone i:nth-child(1){left:0;top:-2px}.bone i:nth-child(2){left:0;top:5px}.bone i:nth-child(3){right:0;top:-2px}.bone i:nth-child(4){right:0;top:5px}
+.note{font-size:.92rem;color:#C9D3F2}
+
+/* cast */
+.cast{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+@media (max-width:900px){.cast{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cast{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.who{display:grid;gap:8px;align-content:start;min-width:0}
+.who img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:16px}
+.who h3{font-size:1.2rem}
+.who p{font-size:.95rem;color:var(--muted)}
+
+/* grown ups + follow */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,56px)}
+@media (max-width:820px){.duo{grid-template-columns:1fr}}
+.duo > div{display:grid;gap:16px;align-content:start;min-width:0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px)}
+.links{display:grid;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-weight:800}
+.links a span{font-weight:600;color:var(--muted);font-size:.92rem;overflow-wrap:anywhere;text-align:right}
+.links a:hover{border-color:var(--ink)}
+.tag{font-family:var(--display);font-weight:700;font-size:1.3rem}
+
+footer{padding-block:36px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo-nellie-circle.png" alt="" width="40" height="40"><span>Nellie's Big Dreams</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#films" class="go">Films</a><a href="#games" class="go">Games</a><a href="#dog-view">Dog View</a><a href="#cast">Cast</a><a href="#follow">Follow</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="sr">Nellie's Big Dreams</h1>
+      <figure><img src="img/hero-cream-astronaut.jpg" alt="Nellie the puppy asleep on top of the words Nellie's Big Dreams, dreaming she is an astronaut among the stars" width="2400" height="1340" fetchpriority="high"></figure>
+      <div class="under">
+        <p class="tagline">A cartoon for dogs. And the people who love them.</p>
+        <p class="sub">Nellie is a puppy with big dreams. Each film starts with one in a thought cloud: a warm place, a bed of her own, the garden. It comes true, smaller and better than she planned. A narrator tells the story, the dogs say simple words and count, and now and then the picture goes into Dog View.</p>
+        <a class="btn" href="#films"><span class="tri" aria-hidden="true"></span>Watch the Films</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="films" id="films">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">The films</span>
+        <h2>Watch the Films</h2>
+        <p class="lede">Each film is one big dream with a little lesson at the end, and each is about a minute long. Start with film 01, the day Nellie arrives. Put the screen low, turn the sound on, and see if your dog watches too.</p>
+      </div>
+      <div class="shelf">
+      <article class="film">
+        <a class="player" href="https://youtu.be/O7ABf5vkyN4" target="_blank" rel="noopener" data-yt="O7ABf5vkyN4" aria-label="Play film 01, Nellie Arrives">
+          <img src="img/film-01.jpg" alt="A still from Nellie Arrives" loading="lazy" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span><span class="len">1:09</span>
+        </a>
+        <span class="no">Film 01</span>
+        <h3>Nellie Arrives</h3>
+        <p>One morning, a stork leaves a basket at a blue front door. Inside is Nellie. She dreams of a warm place, and finds one next to Annie. New is not the same as scary.</p>
+      </article>
+      <article class="film">
+        <a class="player" href="https://youtu.be/uIZcQxmxquQ" target="_blank" rel="noopener" data-yt="uIZcQxmxquQ" aria-label="Play film 02, A Bed of My Own">
+          <img src="img/film-02.jpg" alt="A still from A Bed of My Own" loading="lazy" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span><span class="len">0:51</span>
+        </a>
+        <span class="no">Film 02</span>
+        <h3>A Bed of My Own</h3>
+        <p>Nellie wants a bed of her own. She tries a shoe, the stairs, the laundry and the sofa. The best bed has Annie in it. Safe is a who, not a where.</p>
+      </article>
+      <article class="film">
+        <a class="player" href="https://youtu.be/3H4Lx288wNs" target="_blank" rel="noopener" data-yt="3H4Lx288wNs" aria-label="Play film 03, The Collar">
+          <img src="img/film-03.jpg" alt="A still from The Collar" loading="lazy" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span><span class="len">0:41</span>
+        </a>
+        <span class="no">Film 03</span>
+        <h3>The Collar</h3>
+        <p>A yellow collar goes on, and Nellie wants it off. Then Annie shows her own tag, and Nellie hears hers jingle. The collar means you belong.</p>
+      </article>
+      <article class="film">
+        <a class="player" href="https://youtu.be/-m_mmJ9DYlc" target="_blank" rel="noopener" data-yt="-m_mmJ9DYlc" aria-label="Play film 04, The Puppy in the Mirror">
+          <img src="img/film-04.jpg" alt="A still from The Puppy in the Mirror" loading="lazy" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span><span class="len">0:59</span>
+        </a>
+        <span class="no">Film 04</span>
+        <h3>The Puppy in the Mirror</h3>
+        <p>Nellie dreams of a friend her own size. The puppy in the hall mirror copies everything she does. Boop. Annie sits down beside her and says, &quot;That one is you.&quot;</p>
+      </article>
+      <article class="film">
+        <a class="player" href="https://youtu.be/__qkG9cGykQ" target="_blank" rel="noopener" data-yt="__qkG9cGykQ" aria-label="Play film 05, The Invisible Wall">
+          <img src="img/film-05.jpg" alt="A still from The Invisible Wall" loading="lazy" width="1280" height="720">
+          <span class="play" aria-hidden="true"></span><span class="len">0:52</span>
+        </a>
+        <span class="no">Film 05</span>
+        <h3>The Invisible Wall</h3>
+        <p>The garden is right there, with a yellow ball in it. So is the glass door. Donk. Annie shows her the wall, and the door slides open. Look before you run.</p>
+      </article>
+      </div>
+      <div class="more"><a class="btn ghost" href="https://www.youtube.com/@nelliesbigdreams" target="_blank" rel="noopener">All the films on YouTube</a></div>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">The arcade</span>
+        <h2>Play with Nellie</h2>
+        <p class="lede">Three little arcade games starring Nellie and her family. Each one plays two ways: the classic pixel game, or 3D with the whole cast. Press MODE on the game, or V on a keyboard, to switch.</p>
+      </div>
+      <div class="arcade">
+      <article class="game">
+        <a class="cab" href="games/nellies-big-catch.html" target="_blank" rel="noopener" aria-label="Play Nellie&#x27;s Big Catch">
+          <img src="img/game-catch.jpg" alt="Nellie&#x27;s Big Catch in 3D: Nellie on the striped lawn, Dad and Mum behind the blue fence, balls in the air" loading="lazy" width="960" height="720">
+          <span class="modes">Classic + 3D</span>
+        </a>
+        <span class="no">Game 1</span>
+        <h3>Nellie&#x27;s Big Catch</h3>
+        <p>Dad and Mum throw from behind the blue fence. Catch the balls and the bones, and dodge the bath bubbles.</p>
+        <a class="btn" href="games/nellies-big-catch.html" target="_blank" rel="noopener"><span class="tri" aria-hidden="true"></span>Play<span class="sr"> Nellie&#x27;s Big Catch</span></a>
+      </article>
+      <article class="game">
+        <a class="cab" href="games/nellies-dream-derby.html" target="_blank" rel="noopener" aria-label="Play Nellie&#x27;s Dream Derby">
+          <img src="img/game-derby.jpg" alt="Nellie&#x27;s Dream Derby in 3D: Nellie in her basket kart racing Dad and Mum down a garden track" loading="lazy" width="960" height="720">
+          <span class="modes">Classic + 3D</span>
+        </a>
+        <span class="no">Game 2</span>
+        <h3>Nellie&#x27;s Dream Derby</h3>
+        <p>Kart races through three dreams: the garden, Cloud Nine and the moon. Fall off a cloud and the Stork flies you back.</p>
+        <a class="btn" href="games/nellies-dream-derby.html" target="_blank" rel="noopener"><span class="tri" aria-hidden="true"></span>Play<span class="sr"> Nellie&#x27;s Dream Derby</span></a>
+      </article>
+      <article class="game">
+        <a class="cab" href="games/nellies-midnight-kibble.html" target="_blank" rel="noopener" aria-label="Play Nellie&#x27;s Midnight Kibble">
+          <img src="img/game-kibble.jpg" alt="Nellie&#x27;s Midnight Kibble in 3D: Nellie in the maze below the laundry basket, the chasers coming out" loading="lazy" width="960" height="720">
+          <span class="modes">Classic + 3D</span>
+        </a>
+        <span class="no">Game 3</span>
+        <h3>Nellie&#x27;s Midnight Kibble</h3>
+        <p>Eat every piece of kibble in the dark house before the vacuum, the towel, the mop and the cone catch you.</p>
+        <a class="btn" href="games/nellies-midnight-kibble.html" target="_blank" rel="noopener"><span class="tri" aria-hidden="true"></span>Play<span class="sr"> Nellie&#x27;s Midnight Kibble</span></a>
+      </article>
+      </div>
+      <p class="arcade-note">Arrow keys on a computer, the big buttons on a phone. Catch the golden tag and the game switches to Dog View.</p>
+    </div>
+  </section>
+
+  <section class="band" id="dog-view">
+    <div class="wrap dv">
+      <div class="text">
+        <span class="eyebrow">Dog View</span>
+        <h2>Through Nellie&#x27;s Eyes</h2>
+        <p class="lede">Now and then, Nellie&#x27;s tag goes ting. A ring of yellow light spreads from her collar and the Dog View badge shows. A dog&#x27;s eye has two kinds of color cones. Ours has three. So her view is blues, yellows and grays. Dog View is for you, the people watching. A simulation of a dog&#x27;s eye, color only.</p>
+        <span class="badge"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View</span>
+      </div>
+      <figure><img src="img/dog-view-explainer.jpg" alt="The same moment from film 01 twice: above as we see it, below in Dog View, where the reds and oranges turn to yellows and the blues stay blue" loading="lazy" width="1200" height="1366"></figure>
+    </div>
+  </section>
+
+  <section id="cast" class="paper">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Meet the cast</span>
+        <h2>Meet the Family</h2>
+      </div>
+      <div class="cast">
+      <div class="who">
+        <img src="img/cast-nellie.jpg" alt="Nellie" loading="lazy" width="800" height="1000">
+        <h3>Nellie</h3>
+        <p>The puppy, and this is her show. Small and black, with freckles, a yellow collar and a bone tag that jingles when she walks. You will often hear her say &quot;Mine.&quot; When her tag rings, the picture goes into Dog View.</p>
+      </div>
+      <div class="who">
+        <img src="img/cast-annie.jpg" alt="Annie" loading="lazy" width="800" height="1000">
+        <h3>Annie</h3>
+        <p>The big collie of the house, with a blue collar and one ear that never stands up. She makes room in her bed and shows Nellie how things work. In films 04 and 05, listen for her &quot;Oh, Nellie!&quot;</p>
+      </div>
+      <div class="who">
+        <img src="img/cast-mum.jpg" alt="Mum" loading="lazy" width="800" height="1000">
+        <h3>Mum</h3>
+        <p>Mustard sweater and blue slippers. Mum is the first to say &quot;Hello, Nellie,&quot; and the one who puts on Nellie&#x27;s yellow collar.</p>
+      </div>
+      <div class="who">
+        <img src="img/cast-dad.jpg" alt="Dad" loading="lazy" width="800" height="1000">
+        <h3>Dad</h3>
+        <p>A beard, glasses, a blue cardigan and yellow socks. On her first day, Nellie licks his beard and says, &quot;Beard!&quot; Dad says it back.</p>
+      </div>
+      <div class="who">
+        <img src="img/cast-stork.jpg" alt="The Stork" loading="lazy" width="800" height="1000">
+        <h3>The Stork</h3>
+        <p>The Stork wears a blue mail carrier&#x27;s cap. One morning it left a basket on the mat at the blue front door. Inside was Nellie.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="follow">
+    <div class="wrap duo">
+      <div>
+        <span class="eyebrow">For grown ups</span>
+        <h2>A Note for Grown-Ups</h2>
+        <p class="lede">Short films, simple words, everyday sounds and one small lesson each. No doorbells or sirens. The stories come from real puppy moments: a first collar, a glass door, a puppy in the mirror. We cannot promise your dog will watch. Some dogs do and some do not. Animated with the help of AI tools.</p>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">Follow Nellie</span>
+        <p class="tag">Follow Nellie</p>
+        <p class="sub">Find Nellie as @nelliesbigdreams on YouTube, Instagram, Facebook and TikTok. Did your dog watch? Film it and show us with #NelliesBigDreams.</p>
+        <div class="links">
+          <a href="https://www.youtube.com/@nelliesbigdreams" target="_blank" rel="noopener">YouTube <span>@nelliesbigdreams</span></a>
+          <a href="https://www.instagram.com/nelliesbigdreams" target="_blank" rel="noopener">Instagram <span>@nelliesbigdreams</span></a>
+          <a href="https://www.facebook.com/nelliesbigdreams" target="_blank" rel="noopener">Facebook <span>Nellie&#x27;s Big Dreams</span></a>
+          <a href="https://www.tiktok.com/@nelliesbigdreams" target="_blank" rel="noopener">TikTok <span>@nelliesbigdreams</span></a>
+        </div>
+        <p class="sub">Kids, please ask a grown-up before you post.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Nellie's Big Dreams</span>
+    <span>#NelliesBigDreams</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var live = /(^|\.)nelliesbigdreams\.com$|\.github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+  if (!live) return;                       // in a preview the cards open YouTube in a new tab
+  document.querySelectorAll('a.player[data-yt]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+      f.title = a.getAttribute('aria-label') || 'Nellie\'s Big Dreams film';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      var box = document.createElement('div'); box.className = 'player'; box.appendChild(f);
+      a.replaceWith(box);
+    });
+  });
+})();
+</script>
+</body>
+</html>
