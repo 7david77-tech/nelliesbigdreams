@@ -136,6 +136,74 @@ section{padding-block:clamp(56px,8vw,96px)}
 
 footer{padding-block:36px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
+
+/* the guide: an expandable section under the Dog View band */
+.deep{margin-top:clamp(32px,5vw,56px);scroll-margin-top:84px}
+.deep > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:20px;background:rgba(255,250,240,.08);border:1px solid rgba(255,250,240,.28);transition:background .15s ease, border-color .15s ease}
+.deep > summary::-webkit-details-marker{display:none}
+.deep > summary:hover{background:rgba(255,250,240,.14);border-color:var(--yellow)}
+.deep > summary:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.deep .st{display:grid;gap:2px;min-width:0;flex:1}
+.deep .st strong{font-family:var(--display);font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.2;color:var(--paper)}
+.deep .st span{color:#C9D3F2;font-size:.98rem}
+.deep .go{flex:none;background:var(--yellow);color:var(--ink);font-weight:800;padding:9px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:8px}
+.deep .go::after{content:"";width:8px;height:8px;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(45deg) translateY(-2px);transition:transform .2s ease}
+.deep[open] .go::after{transform:rotate(-135deg) translateY(-1px)}
+.deep .go .c,.deep[open] .go .o{display:none}.deep[open] .go .c{display:inline}
+.bone.big{width:40px;height:16px}
+.bone.big::before{left:6px;right:6px;top:4px;height:8px;border-radius:4px}
+.bone.big i{width:12px;height:12px}
+.bone.big i:nth-child(1),.bone.big i:nth-child(3){top:-3px}.bone.big i:nth-child(2),.bone.big i:nth-child(4){top:7px}
+@media (max-width:560px){.deep > summary{flex-wrap:wrap;padding:16px}.deep .bone.big{display:none}.deep .go{order:3}}
+
+.guide{margin-top:18px;background:var(--paper);color:var(--ink);border-radius:24px;padding-block:clamp(28px,5vw,56px);padding-inline:clamp(18px,5vw,56px)}
+.ghead{max-width:68ch;margin:0 auto clamp(18px,3vw,28px);display:grid;gap:8px}
+.ghead .eyebrow{color:var(--blue)}
+.gtitle{font-size:clamp(1.9rem,4.4vw,2.8rem);letter-spacing:-.01em}
+.prose{max-width:68ch;margin:0 auto;font-size:1.0625rem;line-height:1.7}
+.prose > * + *{margin-top:1em}
+.prose h3{font-size:clamp(1.4rem,2.6vw,1.75rem);margin-top:1.9em;padding-top:.2em}
+.prose h4{font-size:1.2rem;margin-top:1.5em;color:var(--blue)}
+.prose ul{padding-left:1.2em}
+.prose li + li{margin-top:.45em}
+.prose a{color:var(--blue)}
+.prose sup{font-size:.68em;line-height:0;margin-left:1px}
+.prose sup a{text-decoration:none;font-weight:800}
+.prose .aside{font-size:.95rem;color:var(--muted);border-left:3px solid var(--yellow);padding-left:14px}
+.prose strong{font-weight:800}
+.fig{margin:1.6em 0;display:grid;gap:10px}
+.fig img{width:100%;height:auto;border-radius:14px;display:block}
+.fig figcaption{font-size:.93rem;color:var(--muted);line-height:1.55}
+@media (min-width:980px){.pairfig,.fov{margin-inline:-14%}}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media (max-width:560px){.pair{grid-template-columns:1fr}}
+.shot{position:relative}
+.lab{position:absolute;left:10px;top:10px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,250,240,.92);color:var(--ink);font-weight:800;font-size:.8rem;padding:4px 10px;border-radius:999px}
+.lab.dog{background:var(--ink);color:var(--paper)}
+.lab .bone{width:22px;height:10px}
+.lab .bone::before{left:4px;right:4px;top:2px;height:5px}
+.lab .bone i{width:7px;height:7px}.lab .bone i:nth-child(1),.lab .bone i:nth-child(3){top:-1px}.lab .bone i:nth-child(2),.lab .bone i:nth-child(4){top:4px}
+.spectrum .bars{display:grid;gap:10px}
+.spectrum .bars > div{display:grid;gap:6px}
+.spectrum .lab{position:static;width:fit-content}
+.spectrum img{height:44px!important;border-radius:8px}
+.spectrum .nm{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.fov .pair{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:10px}
+.fov svg{width:100%;height:auto;display:block}
+.fov .t1{font:800 18px var(--body);fill:var(--ink)}
+.fov .t2{font:800 17px var(--body);fill:var(--ink)}
+.fov .t3{font:600 14px var(--body);fill:var(--muted)}
+.mx{overflow-x:auto;margin:1.2em 0}
+.mx table{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem;min-width:420px}
+.mx th,.mx td{padding:7px 12px;border-bottom:1px solid var(--line);text-align:right}
+.mx th:first-child,.mx td:first-child{text-align:left;font-weight:800}
+.src{font-size:.88rem;color:var(--muted);padding-left:1.5em;line-height:1.55}
+.src li{scroll-margin-top:90px}
+.src li:target{background:#FFF1BF;border-radius:6px}
+.src a{overflow-wrap:anywhere}
+.gend{display:flex;justify-content:center;margin-top:clamp(28px,4vw,40px)}
+.gend .btn{font-family:var(--body);font-size:1rem;border:0;cursor:pointer}
+.prose h3,.prose h4,.prose figure{scroll-margin-top:90px}
 </style>
 </head>
 <body>
@@ -272,6 +340,179 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
       <figure><img src="img/dog-view-explainer.jpg" alt="The same moment from film 01 twice: above as we see it, below in Dog View, where the reds and oranges turn to yellows and the blues stay blue" loading="lazy" width="1200" height="1366"></figure>
     </div>
+    <div class="wrap">
+    <details class="deep" id="how-dogs-see">
+      <summary>
+        <span class="bone big" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="st"><strong>How dogs see: the whole story</strong><span>Colors, sharpness, twilight, TV and more, with photos. A 10 minute read.</span></span>
+        <span class="go"><span class="o">Read</span><span class="c">Close</span></span>
+      </summary>
+      <div class="guide">
+        <header class="ghead">
+          <span class="eyebrow">A guide for grown ups and curious kids</span>
+          <h3 class="gtitle">How Dogs See the World</h3>
+        </header>
+        <div class="prose">
+<p>Picture Nellie, our little black puppy, racing across the park after a ball. She is in the same park as you, but she sees it differently. Her colors are different, her picture is softer, her view is wider, and she probably copes better than you do as the sun goes down.</p>
+<p>Here is what scientists have learned about dog eyes, and what they are still working out. Small raised numbers point to the sources at the end.</p>
+<p class="aside">The photos in this guide are illustrations made for Nellie's Big Dreams. Each Dog View version runs the photo through the same color model as the films, explained near the end.</p>
+<h3>First, a myth: dogs do not see in black and white</h3>
+<p>Many of us grew up hearing that dogs see the world in black and white. Veterinary eye specialists call this a common misconception <sup><a href="#src-1">1</a></sup>. Early studies did lead some researchers to decide that color was unimportant to dogs <sup><a href="#src-2">2</a></sup>, but later experiments told a different story.</p>
+<h3>The colors dogs see</h3>
+<p>The back of the eye is lined with light-sensing cells. Cone cells handle color, and most people have three kinds <sup><a href="#src-1">1</a></sup>.</p>
+<p>Dogs have two, which is called dichromatic vision. A classic study of three dogs found that the two dog cones respond best at about 429 nanometers, in the blue-violet range, and about 555 nanometers, in the yellow-green range <sup><a href="#src-3">3</a></sup>. A later study measuring the eye's electrical responses found nearly the same peaks <sup><a href="#src-4">4</a></sup>.</p>
+<p>According to the American College of Veterinary Ophthalmologists, dogs see blues and yellows best, can tell reds from blues, and have trouble telling reds from greens, much like a person with red-green color blindness <sup><a href="#src-1">1</a></sup>. One veterinary ophthalmologist explains that light we see as green, yellow and red, roughly 500 to 620 nanometers, would all look yellowish to a dog <sup><a href="#src-5">5</a></sup>.</p>
+<figure class="fig spectrum">
+  <div class="bars">
+    <div><span class="lab">As we see it</span><img src="img/dogsee/spectrum-human.png" alt="The rainbow from violet through blue, green, yellow and orange to red" width="1600" height="72"></div>
+    <div><span class="lab dog"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View</span><img src="img/dogsee/spectrum-dog.png" alt="The same rainbow in Dog View: blues, a pale band, then yellows that darken to olive where we see red" width="1600" height="72"></div>
+  </div>
+  <div class="nm" aria-hidden="true"><span>400 nm</span><span>500</span><span>600</span><span>700 nm</span></div>
+  <figcaption>The rainbow, then the same rainbow through Dog View. Greens, yellows, oranges and reds all land in one yellowish family, while the blues stay blue.</figcaption>
+</figure>
+<p>Researchers even gave dogs a color blindness test: a running cat on a screen, made from the red and green dot colors of a standard test plate. The dogs reacted much like red-green color-blind people do <sup><a href="#src-6">6</a></sup>.</p>
+<p>Color still matters to dogs. Given targets that differed in both color and brightness, eight dogs all preferred to choose by color <sup><a href="#src-2">2</a></sup>.</p>
+<figure class="fig pairfig">
+  <div class="pair">
+    <div class="shot"><img src="img/dogsee/garden.jpg" alt="A summer garden with red roses, orange marigolds, yellow sunflowers, purple lavender and blue hydrangeas" loading="lazy" width="960" height="640"><span class="lab">As we see it</span></div>
+    <div class="shot"><img src="img/dogsee/garden-dog.jpg" alt="The same garden in Dog View: the roses and marigolds turn yellowish, the hydrangeas and lavender stay blue" loading="lazy" width="960" height="640"><span class="lab dog"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View</span></div>
+  </div>
+  <figcaption>A summer garden. In Dog View the red roses melt into the leaves, while the blue hydrangeas and the sunflowers stay bright.</figcaption>
+</figure>
+<h4>Why the red ball gets lost in the grass</h4>
+<p>That solves a familiar puzzle. To a dog, a red ball and green grass fall into the same yellowish family, so the ball does not pop out the way it does for you <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>. A blue or yellow ball on the same grass gives a dog a much clearer color difference <sup><a href="#src-1">1</a></sup>.</p>
+<figure class="fig pairfig">
+  <div class="pair">
+    <div class="shot"><img src="img/dogsee/balls.jpg" alt="A red ball, a blue ball and a yellow tennis ball on a green lawn" loading="lazy" width="960" height="640"><span class="lab">As we see it</span></div>
+    <div class="shot"><img src="img/dogsee/balls-dog.jpg" alt="The same three balls in Dog View: the red ball turns dull olive like the grass, the blue and yellow balls stand out" loading="lazy" width="960" height="640"><span class="lab dog"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View</span></div>
+  </div>
+  <figcaption>Three balls on the lawn. In Dog View the red ball turns a dull olive and hides in the grass. The blue ball stands out most, and the yellow one stays easy to spot.</figcaption>
+</figure>
+<h3>A softer picture</h3>
+<p>Dogs do not see fine detail as sharply as people do. Eye doctors describe sharpness with fractions like 20/20. Studies suggest dogs are around 20/75: a dog has to be 20 feet from something to make out the detail a person with typical vision can see from 75 feet <sup><a href="#src-1">1</a></sup>.</p>
+<figure class="fig pairfig">
+  <div class="pair">
+    <div class="shot"><img src="img/dogsee/park.jpg" alt="A park path at dog height with a bench, a red bicycle and an oak tree" loading="lazy" width="960" height="640"><span class="lab">As we see it</span></div>
+    <div class="shot"><img src="img/dogsee/park-dog-soft.jpg" alt="The same park in Dog View colors and softer, the bicycle and the bark hard to make out" loading="lazy" width="960" height="640"><span class="lab dog"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View, softer</span></div>
+  </div>
+  <figcaption>A park path at dog height. The second picture adds a rough idea of 20/75 sharpness, as it might look on this page at arm's length. Real dogs vary a lot <sup><a href="#src-7">7</a></sup>.</figcaption>
+</figure>
+<p>That is an estimate, and studies disagree. In a 2017 test with striped patterns, dogs scored 5.5 to 19.5 cycles per degree in bright light (a measure of the finest stripes they could see), while people in the same setup scored 32.1 to 44.2. In other words, people can make things out from roughly three times as far away <sup><a href="#src-7">7</a></sup>. Earlier tests had put dogs between about 2.5 and 12.6, and one pug in 2017 reached 19.5 <sup><a href="#src-7">7</a></sup>.</p>
+<p>Why is the picture softer? Dogs have far more rods (the cells for dim light) than cones. In beagle retinas, even the sharpest spot had about 23 rods for every cone, and the lower edge had about 41 <sup><a href="#src-8">8</a></sup>. Many light-sensing cells share each nerve cell that carries the signal to the brain, which helps in dim light but costs sharpness <sup><a href="#src-5">5</a></sup>. A dog's optic nerve carries about 165,000 nerve fibers, compared with about 1.2 million in a person <sup><a href="#src-5">5</a></sup>.</p>
+<p>Dogs do have a sharpest spot: in 2014, scientists found a small area packed with cones as tightly as the human fovea, our own sharpest spot, though without its little pit <sup><a href="#src-9">9</a></sup>.</p>
+<h3>Made for twilight</h3>
+<p>Two veterinary vision researchers concluded that dogs probably outdo people at functioning in dim light <sup><a href="#src-10">10</a></sup>. In dogs, the central part of the retina is mostly rods, while the same region in people is mostly cones <sup><a href="#src-1">1</a></sup>.</p>
+<p>Most dogs also have a mirror-like layer in the upper half of the back of the eye, the tapetum lucidum <sup><a href="#src-1">1</a></sup>. Light that passes through the retina bounces off it for a second chance to be caught <sup><a href="#src-1">1</a>,<a href="#src-11">11</a></sup>. That is the eye shine you see when a flashlight or car headlight catches a dog's eyes at night, and its color can range from blue-green to gold <sup><a href="#src-5">5</a></sup>.</p>
+<figure class="fig"><img src="img/dogsee/eyeshine.jpg" alt="A black Labrador puppy at night, its eyes glowing green in a flashlight beam" loading="lazy" width="1440" height="960"><figcaption>Eye shine: a flashlight beam bouncing back from the tapetum lucidum, the mirror-like layer at the back of the eye.</figcaption></figure>
+<p>There is a trade-off. The tapetum's scattered light may reduce sharpness <sup><a href="#src-5">5</a></sup>. And noticing things in dim light is not the same as seeing detail. In very dim light, the 2017 study found dogs scored 1.8 to 3.5 cycles per degree, while people scored 5.9 to 9.9 <sup><a href="#src-7">7</a></sup>. At dusk your dog may spot a shape moving in the shadows, but you may still see the details better.</p>
+<h3>Built to notice movement</h3>
+<p>Dogs are more sensitive to moving objects than to still ones <sup><a href="#src-1">1</a></sup>. Many dogs ignore a toy lying still, then dash after it the moment it moves <sup><a href="#src-5">5</a></sup>. A wide view and a rod-rich retina make dogs well suited to spotting movement in dim light <sup><a href="#src-5">5</a></sup>.</p>
+<p>The lab adds a twist. Shown screens of moving dots, dogs needed about 42 percent of the dots moving together before they noticed, while people needed about 5 percent <sup><a href="#src-12">12</a></sup>. In a test of six dogs, they noticed motion at about 0.76 degrees per second on average, while adults can detect motion slower than 0.1 degrees per second <sup><a href="#src-13">13</a></sup>. The researchers say this questions the common claim that dogs are especially good at detecting motion <sup><a href="#src-12">12</a></sup>, though dogs did beat other non-primate animals tested, such as cats <sup><a href="#src-13">13</a></sup>. Dogs may react to movement quickly without detecting it better than we do.</p>
+<h3>Flicker, screens and why dogs watch TV</h3>
+<p>Films and TV are a fast series of still pictures. Above a certain speed, called the flicker fusion rate, the flashes blend into smooth motion. For dogs in bright light, estimates run from about 70 to 90 flashes per second <sup><a href="#src-5">5</a>,<a href="#src-15">15</a>,<a href="#src-16">16</a></sup>, compared with about 50 to 60 for people in classic measurements <sup><a href="#src-5">5</a>,<a href="#src-15">15</a></sup>, although human figures vary from about 50 to 90 depending on the test <sup><a href="#src-17">17</a></sup>. In low light, dogs and people are similar <sup><a href="#src-5">5</a></sup>. Several of the dog figures trace back to one study of just four beagles <sup><a href="#src-14">14</a>,<a href="#src-15">15</a>,<a href="#src-16">16</a></sup>. The honest summary: dogs probably need a faster picture than we do.</p>
+<p>At home, researchers suggest that screens with lower refresh rates may look flickery or less real to dogs; televisions most commonly refresh 60 to 120 times a second <sup><a href="#src-16">16</a></sup>. In the same survey, one owner said their dog became more interested after the family upgraded to a newer TV <sup><a href="#src-16">16</a></sup>. That is one story, not proof.</p>
+<p>Plenty of dogs do watch. In a survey of 1,246 dog owners, 86 percent of those who answered said their dog watched screens. Owners often described excitement: 78 percent said their dog approached the screen, and 76 percent said it made sounds at it. Animal videos were the favorites, and the most popular animal was another dog <sup><a href="#src-16">16</a></sup>. A 2025 survey of 453 owners found that a dog's personality, such as how excitable it is, helped predict how it reacts to TV, and the authors suggest dogs may treat things on a flat screen much like the real thing <sup><a href="#src-18">18</a></sup>.</p>
+<figure class="fig pairfig">
+  <div class="pair">
+    <div class="shot"><img src="img/dogsee/tv.jpg" alt="A black puppy and a border collie watching a dog run across a field on TV" loading="lazy" width="960" height="640"><span class="lab">As we see it</span></div>
+    <div class="shot"><img src="img/dogsee/tv-dog.jpg" alt="The same living room in Dog View: the green field on the screen turns yellowish, the sky stays blue" loading="lazy" width="960" height="640"><span class="lab dog"><span class="bone" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dog View</span></div>
+  </div>
+  <figcaption>Two dogs watching a dog on TV, the favorite kind of video in the owner survey <sup><a href="#src-16">16</a></sup>. In Dog View the green field turns yellowish and the sky stays blue.</figcaption>
+</figure>
+<h3>A wide view, with a nose in the middle</h3>
+<p>Most dogs' eyes sit further toward the sides of the head than ours, which gives them a wider view <sup><a href="#src-1">1</a></sup>. A typical dog's field of view is estimated at about 240 degrees, compared with about 200 for people <sup><a href="#src-5">5</a></sup>. The cost is depth. Depth perception works best where the two eyes overlap, and that overlap is estimated at 30 to 60 degrees in dogs, compared with about 140 in people <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>. The nose also gets in the way, so depth perception is probably best when a dog looks straight ahead <sup><a href="#src-1">1</a></sup>.</p>
+<figure class="fig fov">
+  <div class="pair"><svg viewBox="0 0 400 330" role="img" aria-label="A person: field of view about about 200°, both eyes overlap about 140°">
+  <text x="200" y="26" text-anchor="middle" class="t1">A person</text>
+  <path d="M200,190 L52.3,216.0 A150,150 0 1 1 347.7,216.0 Z" fill="#5B7FF0" fill-opacity="0.34"/>
+  <path d="M200,190 L59.0,138.7 A150,150 0 0 1 341.0,138.7 Z" fill="#F5C518" fill-opacity="0.75"/>
+  <path d="M200,190 m-150,0 a150,150 0 1,0 300,0" fill="none" stroke="#10275F" stroke-opacity=".12" stroke-dasharray="3 5"/>
+  <circle cx="178" cy="193" r="6" fill="#10275F"/><circle cx="222" cy="193" r="6" fill="#10275F"/><circle cx="200" cy="192" r="22" fill="#10275F"/><ellipse cx="200" cy="170" rx="6" ry="5" fill="#10275F"/><circle cx="193" cy="183" r="2.6" fill="#FFFAF0"/><circle cx="207" cy="183" r="2.6" fill="#FFFAF0"/>
+  <text x="200" y="84" text-anchor="middle" class="t2">about 140°</text>
+  <text x="200" y="102" text-anchor="middle" class="t3">both eyes</text>
+  <text x="200" y="318" text-anchor="middle" class="t2">about 200° in all</text>
+</svg><svg viewBox="0 0 400 330" role="img" aria-label="A dog: field of view about about 240°, both eyes overlap 30 to 60°">
+  <text x="200" y="26" text-anchor="middle" class="t1">A dog</text>
+  <path d="M200,190 L70.1,265.0 A150,150 0 1 1 329.9,265.0 Z" fill="#5B7FF0" fill-opacity="0.34"/>
+  <path d="M200,190 L142.6,51.4 A150,150 0 0 1 257.4,51.4 Z" fill="#F5C518" fill-opacity="0.75"/>
+  <path d="M200,190 m-150,0 a150,150 0 1,0 300,0" fill="none" stroke="#10275F" stroke-opacity=".12" stroke-dasharray="3 5"/>
+  <ellipse cx="200" cy="196" rx="20" ry="26" fill="#10275F"/><ellipse cx="200" cy="168" rx="10" ry="18" fill="#10275F"/><ellipse cx="179" cy="206" rx="7" ry="13" fill="#10275F" transform="rotate(-25 179 206)"/><ellipse cx="221" cy="206" rx="7" ry="13" fill="#10275F" transform="rotate(25 221 206)"/><circle cx="190" cy="184" r="2.6" fill="#FFFAF0"/><circle cx="210" cy="184" r="2.6" fill="#FFFAF0"/><circle cx="200" cy="152" r="4" fill="#FFFAF0"/>
+  <text x="200" y="84" text-anchor="middle" class="t2">30 to 60°</text>
+  <text x="200" y="102" text-anchor="middle" class="t3">both eyes</text>
+  <text x="200" y="318" text-anchor="middle" class="t2">about 240° in all</text>
+</svg></div>
+  <figcaption>Seen from above. Blue and yellow together are everything the two eyes take in. Yellow alone is where both eyes overlap, the zone for judging depth. Typical estimates, and they change with the shape of the head <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>.</figcaption>
+</figure>
+<p>Skull shape matters. Flat-faced breeds such as pugs have more overlap between the eyes, and long-nosed dogs less <sup><a href="#src-5">5</a></sup>. Even the inside of the eye changes. A study of 22 dogs found that long-nosed dogs tend to have a horizontal band of sharper vision across the retina, like a wolf's, while a flat-faced pug can have a single concentrated spot instead <sup><a href="#src-19">19</a></sup>. If Annie, our cartoon collie, were a real dog, her long nose suggests she would have that wolf-like band.</p>
+<h3>Up close, the nose takes over</h3>
+<p>You can switch focus from a far-off tree to the book in your hands. Dogs have much less of this focusing power <sup><a href="#src-5">5</a>,<a href="#src-20">20</a></sup>. One veterinary ophthalmologist estimates it at about 2 to 4 diopters <sup><a href="#src-5">5</a></sup>. As a rough calculation from that number, not a measurement, a dog may struggle to focus on things closer than about 25 to 50 centimeters, or roughly 10 to 20 inches. At a distance, most dogs are neither nearsighted nor farsighted <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>.</p>
+<p>So when Nellie meets a new toy, she does not stare at it from an inch away. She sniffs it. Dogs lean on smell and hearing to help them picture the world around them <sup><a href="#src-5">5</a></sup>.</p>
+<figure class="fig"><img src="img/dogsee/sniff.jpg" alt="A black puppy sniffing a blue toy bone on a wooden floor" loading="lazy" width="1440" height="960"><figcaption>Up close, the nose does the looking.</figcaption></figure>
+<h3>What scientists still do not know</h3>
+<ul>
+<li><strong>How sharp, exactly.</strong> Estimates vary several times over between studies and between individual dogs <sup><a href="#src-7">7</a></sup>.</li>
+<li><strong>Flicker.</strong> The dog numbers come from very few dogs <sup><a href="#src-14">14</a>,<a href="#src-15">15</a></sup>.</li>
+<li><strong>Shades of gray.</strong> One review suggested dogs may beat people at telling shades of gray apart <sup><a href="#src-10">10</a></sup>, but a study of three shepherd dogs found their brightness discrimination about two times worse than ours <sup><a href="#src-21">21</a></sup>.</li>
+<li><strong>Breeds.</strong> How different skull shapes change everyday vision is still being worked out <sup><a href="#src-19">19</a></sup>.</li>
+<li><strong>The feeling of color.</strong> Experiments show which colors dogs can tell apart. No one can know what those colors feel like inside a dog's head.</li>
+</ul>
+<h3>How Dog View works</h3>
+<p>Dog View is the switch in Nellie's Big Dreams that turns the picture into the colors a dog sees, using published color science rather than guesswork.</p>
+<p>Researchers have long compared dog color vision with deuteranopia, one form of human red-green color blindness <sup><a href="#src-6">6</a></sup>. Dog View uses a model built to simulate exactly that, published in 2009 by Gustavo Machado, Manuel Oliveira and Leandro Fernandes. It follows human color vision in two stages, first the cones and then the channels that compare their signals, and was tested with color-blind and normally sighted volunteers. The authors published ready-made settings, where strength 1.0 means full dichromacy <sup><a href="#src-22">22</a></sup>. Dog View uses the deuteranopia setting at full strength, which mixes each pixel's red, green and blue like this:</p>
+<div class="mx"><table>
+<thead>
+<tr>
+<th>New value</th>
+<th>from Red</th>
+<th>from Green</th>
+<th>from Blue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>0.367322</td>
+<td>0.860646</td>
+<td>-0.227968</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>0.280085</td>
+<td>0.672501</td>
+<td>0.047413</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>-0.011820</td>
+<td>0.042940</td>
+<td>0.968881</td>
+</tr>
+</tbody>
+</table></div>
+<p>One more detail: screen colors are stored in an encoded form, not as plain amounts of light, but the model is built from the actual light a screen's red, green and blue give off <sup><a href="#src-22">22</a></sup>. So Dog View converts each pixel to real amounts of light (called linear light), applies the mix, then converts back.</p>
+<p>Dog View changes color only, on purpose. It adds no blur, flicker, wider view or extra dim-light sensitivity. The show is made for children and dogs to enjoy together, so the pictures stay sharp. A film blurred to 20/75 would be hard for kids to follow, and no flat screen can show a 240-degree view anyway. Color is also the part with a tested model behind it. Keep in mind that Dog View is an approximation: a model of human color blindness standing in for a dog's eye.</p>
+<h3>Tips for families</h3>
+<ul>
+<li><strong>Choose blue or yellow toys</strong> for playing on grass. Red and orange toys are easy for you to spot but harder for your dog to pick out against green <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>.</li>
+<li><strong>Make it move.</strong> A rolling or bouncing toy grabs a dog's attention more than a still one <sup><a href="#src-1">1</a>,<a href="#src-5">5</a></sup>.</li>
+<li><strong>Enjoy the evening.</strong> Dogs function well in dim light <sup><a href="#src-10">10</a></sup>, so dusk can be a lovely time to play. They still will not see fine detail better than you <sup><a href="#src-7">7</a></sup>.</li>
+<li><strong>Give a little space.</strong> Dogs focus poorly very close up <sup><a href="#src-5">5</a>,<a href="#src-20">20</a></sup>, so let your dog sniff a new thing, or hold it a short distance away rather than right against the nose.</li>
+<li><strong>Mind the screen.</strong> If your dog likes TV, place the screen where your dog can see it and watch how it reacts. Since screens often excite dogs, researchers suggest checking that a video suits your dog before leaving it on while you are out <sup><a href="#src-16">16</a></sup>.</li>
+<li><strong>Watch the eyes.</strong> Vets list these signs of eye trouble: discharge or weeping, redness or swelling, cloudiness, blinking or keeping an eye closed, the third eyelid showing, a lump, blood in the eye, a bulging eye, a change in the pupil, or loss of vision. They advise contacting your vet as soon as you notice a problem, and booking an urgent visit if your dog seems to be in pain <sup><a href="#src-23">23</a></sup>. This article is not veterinary advice: if anything about your dog's eyes worries you, ask your vet.</li>
+</ul>
+<h3>Try it: Dog View in the films and games</h3>
+<ul>
+<li><strong><a href="#films">The films</a>.</strong> Now and then, Nellie's tag goes ting, a ring of yellow light spreads from her collar, and the Dog View badge shows. Watch what happens to the reds and greens.</li>
+<li><strong><a href="#games">The games</a>.</strong> In Nellie's Big Catch, Nellie's Dream Derby and Nellie's Midnight Kibble, catch the golden tag and the game switches to Dog View.</li>
+<li><strong>A challenge for kids.</strong> Before Dog View starts, find something red, something blue and something yellow on the screen. Which ones are still easy to spot once you see it Nellie's way?</li>
+</ul>
+<h3 id="sources">Sources</h3>
+<ol class="src"><li id="src-1">Bowersox J. &quot;Vision in Pets.&quot; American College of Veterinary Ophthalmologists (ACVO), 2020. <a href="https://acvo.org/tips-treatments-tricks/vision-in-pets" target="_blank" rel="noopener">acvo.org</a></li><li id="src-2">Kasparson AA, Badridze J, Maximov VV. &quot;Colour cues proved to be more informative for dogs than brightness.&quot; Proceedings of the Royal Society B, 2013. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3730601/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-3">Neitz J, Geist T, Jacobs GH. &quot;Color vision in the dog.&quot; Visual Neuroscience, 1989. <a href="https://doi.org/10.1017/S0952523800004430" target="_blank" rel="noopener">doi.org</a></li><li id="src-4">Jacobs GH, Deegan JF, Crognale MA, Fenwick JA. &quot;Photopigments of dogs and foxes and their implications for canid vision.&quot; Visual Neuroscience, 1993. <a href="https://doi.org/10.1017/S0952523800003291" target="_blank" rel="noopener">doi.org</a></li><li id="src-5">Cook C. &quot;How Well Does Fido See?&quot; Cataract &amp; Refractive Surgery Today, July 2008. <a href="https://crstoday.com/topics/general/crst0708_05-php/41406/" target="_blank" rel="noopener">crstoday.com</a></li><li id="src-6">Siniscalchi M, d&#x27;Ingeo S, Fornelli S, Quaranta A. &quot;Are dogs red-green colour blind?&quot; Royal Society Open Science, 2017. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5717654/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-7">Lind O, Milton I, Andersson E, Jensen P, Roth LSV. &quot;High visual acuity revealed in dogs.&quot; PLOS ONE, 2017. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5716585/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-8">Mowat FM, Petersen-Jones SM, Williamson H, Williams DL, Luthert PJ, Ali RR, Bainbridge JW. &quot;Topographical characterization of cone photoreceptors and the area centralis of the canine retina.&quot; Molecular Vision, 2008. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2610288/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-9">Beltran WA, Cideciyan AV, Guziewicz KE, et al. &quot;Canine retina has a primate fovea-like bouquet of cone photoreceptors which is affected by inherited macular degenerations.&quot; PLOS ONE, 2014. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3944008/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-10">Miller PE, Murphy CJ. &quot;Vision in dogs.&quot; Journal of the American Veterinary Medical Association, 1995 (abstract). <a href="https://pubmed.ncbi.nlm.nih.gov/7493905/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li><li id="src-11">Ollivier FJ, Samuelson DA, Brooks DE, Lewis PA, Kallberg ME, Komáromy AM. &quot;Comparative morphology of the tapetum lucidum (among selected species).&quot; Veterinary Ophthalmology, 2004 (abstract). <a href="https://pubmed.ncbi.nlm.nih.gov/14738502/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li><li id="src-12">Kanizsár O, Mongillo P, Battaglini L, Campana G, Marinelli L. &quot;Dogs are not better than humans at detecting coherent motion.&quot; Scientific Reports, 2017. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5595918/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-13">Lõoke M, Kanizsàr O, Battaglini L, Guerineau C, Mongillo P, Marinelli L. &quot;Are dogs good at spotting movement? Velocity thresholds of motion detection in Canis familiaris.&quot; Current Zoology, 2020. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7769578/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-14">Coile DC, Pollitz CH, Smith JC. &quot;Behavioral determination of critical flicker fusion in dogs.&quot; Physiology &amp; Behavior, 1989 (abstract). <a href="https://pubmed.ncbi.nlm.nih.gov/2813532/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li><li id="src-15">Healy K, McNally L, Ruxton GD, Cooper N, Jackson AL. &quot;Metabolic rate and body size are linked with perception of temporal information.&quot; Animal Behaviour, 2013. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3791410/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-16">Donohue LK, Buesing M, Peterson KD, Ersoz C, Russell LJ, Mowat FM. &quot;Screen interaction behavior in companion dogs: results from a dog owner survey.&quot; Applied Animal Behaviour Science, 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10783809/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-17">Mankowska ND, Marcinkowska AB, Waskow M, Sharma RI, Kot J, Winklewski PJ. &quot;Critical Flicker Fusion Frequency: A Narrative Review.&quot; Medicina, 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8537539/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-18">Montgomery LI, Krichbaum S, Katz JS. &quot;Characterizing TV viewing habits in companion dogs.&quot; Scientific Reports, 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12271434/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a></li><li id="src-19">McGreevy P, Grassi TD, Harman AM. &quot;A strong correlation exists between the distribution of retinal ganglion cells and nose length in the dog.&quot; Brain, Behavior and Evolution, 2004 (abstract). <a href="https://pubmed.ncbi.nlm.nih.gov/14673195/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li><li id="src-20">Gelatt KN. &quot;Eye Structure and Function in Dogs.&quot; Merck Veterinary Manual, Dog Owners version, reviewed 2018, updated 2025. <a href="https://www.merckvetmanual.com/dog-owners/eye-disorders-of-dogs/eye-structure-and-function-in-dogs" target="_blank" rel="noopener">merckvetmanual.com</a></li><li id="src-21">Pretterer G, Bubna-Littitz H, Windischbauer G, Gabler C, Griebel U. &quot;Brightness discrimination in the dog.&quot; Journal of Vision, 2004 (abstract). <a href="https://pubmed.ncbi.nlm.nih.gov/15086313/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li><li id="src-22">Machado GM, Oliveira MM, Fernandes LAF. &quot;A Physiologically-based Model for Simulation of Color Vision Deficiency.&quot; IEEE Transactions on Visualization and Computer Graphics, 2009. Project page with the published matrices: <a href="https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html" target="_blank" rel="noopener">inf.ufrgs.br</a></li><li id="src-23">PDSA (written by vets and vet nurses). &quot;Eye problems in dogs: an overview.&quot; 2020. <a href="https://www.pdsa.org.uk/pet-help-and-advice/pet-health-hub/symptoms/eye-problems-in-dogs" target="_blank" rel="noopener">pdsa.org.uk</a></li></ol>
+        </div>
+        <div class="gend"><button type="button" class="btn ghost" data-close-guide>Close the guide</button></div>
+      </div>
+    </details>
+    </div>
   </section>
 
   <section id="cast" class="paper">
@@ -355,6 +596,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       a.replaceWith(box);
     });
   });
+})();
+
+(function(){
+  var d = document.getElementById('how-dogs-see'); if (!d) return;
+  function openFor(hash){
+    if (!hash) return;
+    if (hash === '#how-dogs-see' || (hash.length > 1 && d.querySelector(hash.replace(/[^#\w-]/g, '')))) d.open = true;
+  }
+  openFor(location.hash);
+  window.addEventListener('hashchange', function(){ openFor(location.hash); });
+  var c = d.querySelector('[data-close-guide]');
+  if (c) c.addEventListener('click', function(){ d.open = false; d.scrollIntoView({behavior: 'smooth', block: 'start'}); });
 })();
 </script>
 </body>
